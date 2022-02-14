@@ -1,0 +1,206 @@
+.cover {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000;
+    opacity: 0;
+    z-index: -1;
+}
+.cover.active {
+    opacity: 0.9;
+    z-index: 100;
+    .transit(all, .5s);
+}
+.header {
+    .logo-mobile {
+        text-align: center;
+        display: none;
+    }
+    font-size: 12px;
+    &-top {
+        background-color: @bg-header;
+        padding: 18px 0;
+        box-sizing: border-box;
+        font-weight: 500;
+        color: @mini-title-color;
+        height: 68px;
+        &-inner {
+            .flex();
+            .web-info {
+                display: flex;
+                &-button {
+                    margin-right: 22px;
+                    align-items: center;
+                    display: flex;
+                    .info-icon {
+                        height: 30px;
+                        width: 30px;
+                        line-height: 30px;
+                        text-align: center;
+                        border: 1px solid @border-color;
+                        color: @main-color;
+                        margin-right: 10px;
+                    }
+                    .info-content {
+                        .title {
+
+                        }
+                        .description {
+                            a {
+                                letter-spacing: 0.01em;
+                                font-weight: 400;
+                                color: @text-white-color;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .sl-language {
+            img {
+                width: 17px;
+                vertical-align: middle;
+                padding-right: 10px;
+            }
+        }
+    }
+    &-bottom {
+        padding-top: 25px;
+        padding-bottom: 21px;
+        &-inner {
+            .flex();
+            .form-control {
+                display: flex;
+                align-items: center;
+                margin-bottom: 3px;
+                .search {
+                    width: 556px;
+                    form {
+                        height: 38px;
+                        border: 1px solid @title-bg-color;
+                        display: flex;
+                        border-radius: 40px;
+                        overflow: hidden;
+                        .search-sl {
+                            line-height: 38px;
+                            padding-left: 20px;
+                            padding-right: 35px;
+                            select {
+                                border: none;
+                                height: 24px;
+                                .appearance(none);
+                                background-image: url('../img/caret-down.png');
+                                background-repeat: no-repeat;
+                                background-position-x: right;
+                                background-position-y: center;
+                                padding-right: 28px;
+                            }
+                        }
+                        .search-input {
+                            flex: 1;
+                            line-height: 38px;
+                            input {
+                                border: none;
+                                width: 100%;
+                                height: 24px;
+                                border-left: 1px solid #e0e0e0;
+                                padding-left: 15px;
+                                letter-spacing: 0.02em;
+                            }
+                        }
+                        .search-button {
+                            button {
+                                border: none;
+                                background-color: @main-color;
+                                color: @text-white-color;
+                                font-size: 18px;
+                                height: 38px;
+                                line-height: 38px;
+                                width: 57px;
+                                text-align: center;
+                            }
+                        }
+                    }
+                }
+                .control-item {
+                    color: @main-color;
+                    font-size: 26px;
+                    margin-left: 19px;
+                }
+                .cart {
+                    padding-right: 10px;
+                    position: relative;
+                    &::after {
+                        content: attr(data);
+                        font-size: 10px;
+                        color: @text-white-color;
+                        display: block;
+                        width: 15px;
+                        height: 15px;
+                        line-height: 15px;
+                        text-align: center;
+                        border-radius: 15px;
+                        background-color: @bg-header;
+                        position: absolute;
+                        top: 3px;
+                        right: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+.menu-bar {
+    padding: 14px 0;
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    background-color: @main-color;
+    &-inner {
+        .flex();
+        .menu-category {
+            text-transform: uppercase;
+            i {
+                font-size: 22px;
+                padding-right: 15px;
+                vertical-align: bottom;
+            }
+        }
+        nav {
+            .nav-icon {
+                display: none;
+                font-size: 14px;
+                text-transform: uppercase;
+                i {
+                    font-size: 22px;
+                    vertical-align: bottom;
+                    padding-left: 15px;
+                }
+            }
+            .navbar {
+                .nav-title {
+                    display: none;
+                    background-color: @main-color;
+                    color: @text-white-color;
+                    line-height: 51px;
+                    text-transform: uppercase;
+                    font-size: 24px;
+                    font-weight: 600;
+                    padding: 0 15px;
+                }
+                .nav-item {
+                    display: inline-block;
+                    margin-left: 27px;
+                    margin-right: 28px;
+                    a {
+                        text-transform: uppercase;
+                        color: #fff;
+                    }
+                    &:last-child {
+                        margin-right: 0;
+                    }
+                }
+            }
+        }
+    }
+}
